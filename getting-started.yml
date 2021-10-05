@@ -7,7 +7,7 @@ jobs:
       image_resource:
         type: registry-image
         source:
-          repository: busybox
+          repository: babz/concourse:0.10
       run:
         path: echo
         args: ["Welcome to concourse Babz"]
