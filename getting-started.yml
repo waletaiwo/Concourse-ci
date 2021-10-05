@@ -1,0 +1,13 @@
+jobs: 
+- name: getting-started-job
+  plan:
+  - task: getting-started-task
+    config:
+      platform: linux
+      image_resource:
+        type: registry-image
+        source:
+          repository: busybox
+      run:
+        path: echo
+        args: ["Welcome to concourse Babz"]
