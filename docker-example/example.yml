@@ -1,0 +1,45 @@
+resources:
+# dockerfile location
+- name: github-example
+  type: git
+  icon: github
+  source:
+    uri: https://github.com/waletaiwo/Concourse-ci.git
+    branch: main
+
+
+# image location and credentials 
+- name: docker-image
+  type: registry-image
+  icon: docker 
+  source:
+    tag: "1.1"
+    repository: ((image-repo-name))/docker-image
+    username: ((registry-username))
+    password: ((registry-password))
+
+# builds and pushes the image 
+jobs:
+  - name: build-and-push
+    plan:
+    - get: github-example
+    - task: build-image
+      privileged: true 
+      config:
+        platform: linux
+        image_resource:
+          type: registry-image
+          source: 
+            repository: concourse/oci-build-task
+        inputs:
+        - name: github-example
+        outputs:
+        - name: image
+        params:
+          CONTEXT: github-example/Dockerfiles/files
+        run:
+          path: build 
+    - put: docker-image
+      params:
+        image: image/image.tar
+        
