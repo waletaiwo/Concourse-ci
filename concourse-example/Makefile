@@ -4,4 +4,6 @@ fly:
  	 --var registry-username= \
  	 --var registry-password=
 	
+	fly -t tutorial unpause-pipeline -p concourse-example
+	
 	fly -t tutorial trigger-job --job concourse-example/build-and-push --watch 	
