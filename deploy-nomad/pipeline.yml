@@ -1,0 +1,35 @@
+resource_types:
+- name: nomad
+  type: docker-image
+  source:
+    repository: troykinsella/concourse-nomad-resource
+    tag: latest
+
+resources:
+- name: nomad
+  type: nomad
+  source:
+    address: http://localhost:4646
+    
+
+- name: Concourse-ci 
+  type: git 
+  icon: github
+  source:
+    uri: https://github.com/waletaiwo/Concourse-ci.git
+    branch: main 
+    
+
+
+jobs:
+- name: deploy-to-nomad
+  plan:
+  - get: Concourse-ci # git resource
+  - put: nomad # nomad resource 
+    params:
+      dir: master/nomad 
+      job_file: job.hcl
+      job_plan: true
+      job_run: true
+    
+   
