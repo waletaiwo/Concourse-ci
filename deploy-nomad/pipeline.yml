@@ -28,9 +28,6 @@ jobs:
   - get: concourse-ci # git resource
   - put: nomad # nomad resource 
     params:
-      dir: master/nomad 
-      job_file: nomad.hcl
-      job_plan: true
-      job_run: true
-    
-   
+      dir: main/concourse-ci 
+      job_file: deploy-nomad/nomad.hcl
+      job_run: true 
