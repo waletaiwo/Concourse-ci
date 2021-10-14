@@ -1,5 +1,5 @@
 1. Edit the makefile and input your credentials where needed.
 2. Save 
-3. type make in your terminal 
+3. type make Deploy in your terminal to build resources 
 4. sit back and watch the magic happen.
-5. use "fly -t tutorial destroy-pipeline -p concourse-example" to destroy the pipeline  
+5. type make Clean to destroy all resources   

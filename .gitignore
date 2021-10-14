@@ -1,0 +1,4 @@
+# ignore text file
+text* 
+concourse-tutorial*
+.envrc
