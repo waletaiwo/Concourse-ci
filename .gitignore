@@ -2,3 +2,5 @@
 text* 
 concourse-tutorial*
 .envrc
+keys*
+makefile

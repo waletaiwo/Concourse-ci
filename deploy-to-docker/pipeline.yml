@@ -14,9 +14,9 @@ resources:
   icon: docker 
   source:
     tag: "1.1"
-    repository: ((image-repo-name))/docker-image
-    username: ((registry-username))
-    password: ((registry-password))
+    repository: ((repo_name))/docker-image
+    username: ((repo_username))
+    password: ((repo_pass))
 
 # builds and pushes the image 
 jobs:

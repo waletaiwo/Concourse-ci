@@ -9,7 +9,7 @@ resources:
 - name: nomad
   type: nomad
   source:
-    address: http://localhost:4646
+    address: ((nomad_address)) #add private ip address and nomad default port here if you are deploying locally
     name: deploy-to-nomad
     
     
