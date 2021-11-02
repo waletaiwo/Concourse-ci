@@ -4,3 +4,7 @@ concourse-tutorial*
 .envrc
 keys*
 makefile
+vault-data
+vault-2
+key*
+audit.log

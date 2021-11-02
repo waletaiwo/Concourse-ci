@@ -1,5 +1,7 @@
 Deploy:
 	fly -t tutorial set-pipeline -c pipeline.yml -p nomad-deployment
+	-- var nomad_address=
+	
 	fly -t tutorial unpause-pipeline -p nomad-deployment
 	fly -t tutorial trigger-job --job nomad-deployment/deploy-to-nomad --watch
 
