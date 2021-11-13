@@ -8,3 +8,5 @@ vault-data
 vault-2
 key*
 audit.log
+server
+checkpoint-signature 
