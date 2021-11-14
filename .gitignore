@@ -12,3 +12,4 @@ server
 checkpoint-signature 
 client 
 alloc 
+test*
