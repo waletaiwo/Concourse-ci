@@ -1,4 +1,4 @@
-job "something" {
+job "concourse" {
     datacenters = ["default"]
 
     group "main" {
@@ -21,7 +21,7 @@ job "something" {
             }
         
         template {
-            destination = "local/file.yml"
+            destination = "local/concourse.yml"
             data = <<EOH
             concourse:
                 image: concourse/concourse

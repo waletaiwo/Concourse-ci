@@ -10,3 +10,5 @@ key*
 audit.log
 server
 checkpoint-signature 
+client 
+alloc 
